@@ -221,7 +221,7 @@ li.swiper-slide {
   transform: rotate(180deg);
   position: relative;
   left: -5px;
-  top: 3px;
+  top: 1px;
 }
 
 .prices-swiper__wrapper.swiper-wrapper {
@@ -333,10 +333,10 @@ li.swiper-slide {
       }
     }
   }
-  &____service-time {
+  &__service-time {
 
     @media (min-width: 768px) {
-      width: 16%;
+      width: 15%;
     }
 
     &::before {
