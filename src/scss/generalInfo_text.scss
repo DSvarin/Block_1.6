@@ -1,0 +1,64 @@
+.generalInfo__text {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+}
+.text {
+  margin: $marginS;
+
+  @media (min-width: 768px) {
+    margin: $marginM;
+    margin-right: 48px;
+  }
+
+  &__info {
+    @include text(normal, 14px, 18px, $darkText);
+    letter-spacing: 0.2px;
+    margin: 0;
+    margin-bottom: 10px;
+    height: 90px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      height: 160px;
+      line-height: 20px;
+    }
+    @media (min-width: 1366px) {
+      height: 160px;
+      width: 490px;
+    }
+  }
+  &__more-button {
+    font-family: $font;
+    @include text(500, 16px, 24px, $darkText);
+    border: none;
+    background: inherit;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    &::before {
+      content: url('../img/expand.svg');
+      height: 26px;
+    }
+  }
+}
+
+.image-nameplate {
+  align-self: center;
+  width: 100%;
+  max-width: 530px;
+
+  @media (min-width: 768px) {
+    margin-right: $marginM;
+    border-radius: 8px;
+    width: 50%;
+  }
+  @media (min-width: 1366px) {
+    width: 44%;
+    flex-grow: 1;
+  }
+}

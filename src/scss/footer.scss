@@ -1,0 +1,32 @@
+.footer {
+  @extend %topBorder;
+  @include text(normal, 14px, 16px, $greyText);
+  padding: $marginS;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: $marginL $marginM;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (min-width: 1366px) {
+    padding: $marginL;
+  }
+
+  &__developer {
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      text-align: left;
+      width: 33%;
+    }
+  }
+  &__warning {
+
+    @media (min-width: 768px) {
+      text-align: right;
+      width: 33%;
+    }
+  }
+}
+

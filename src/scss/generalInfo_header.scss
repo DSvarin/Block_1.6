@@ -1,0 +1,67 @@
+.generalInfo {
+  @extend %topBorder;
+}
+.generalInfo__header {
+  margin: $marginS;
+
+  @media (min-width: 768px) {
+    margin: $marginM;
+  }
+  @media (min-width: 1366px) {
+    margin: $marginL;
+    display: flex;
+  }
+}
+
+h1 {
+  @include text(bold, 28px, 40px, $darkText);
+  position: relative;
+  margin: 0;
+  flex-grow: 1;
+
+  &::before {
+    content: url('../img/highlight.png');
+    position: absolute;
+    left: -$marginS;
+
+    @media (min-width: 768px) {
+      left: -$marginM;
+    }
+    @media (min-width: 1366px) {
+      left: -$marginL;
+    }
+  }
+}
+
+.generalIngo__button {
+  display: none;
+
+  @media (min-width: 1366px) {
+    display: flex;
+  }
+
+  button {
+    font-family: $font;
+    @include text(500, 16px, 24px, $darkText);
+    border: none;
+    background: inherit;
+    display: flex;
+    align-items: center;
+  }
+
+  .repair-button {
+    margin-right: 30px;
+    &::after {
+      content: url('../img/repair.svg');
+      height: 40px;
+      margin-left: 8px;
+    }
+  }
+  .checkstatus-button {
+    &::after {
+      content: url('../img/checkstatus.svg');
+      height: 40px;
+      margin-left: 8px;
+    }
+  }
+}

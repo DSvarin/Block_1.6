@@ -1,0 +1,422 @@
+.serviceInfo {
+
+  ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+
+  &__title {
+    @extend %subtitle;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      padding-left: $marginM;
+    }
+    @media (min-width: 1366px) {
+      padding-left: $marginL;
+    }
+  }
+}
+
+.gradient {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(90deg, transparent 90%, #F2F2F2 100%);
+  z-index: 2;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.swiper-container {
+  padding-bottom: 40px;
+  padding-top: 20px;
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+}
+
+li.swiper-slide {
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 16px;
+  background-color: $elemBg;
+}
+
+.brands-swiper__wrapper.swiper-wrapper {
+  @media (min-width: 768px) {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: $marginM 0 0 $marginM;
+
+    @media (min-width:1366px) {
+      padding: $marginL 0 0 $marginL;
+    }
+  }
+}
+
+.brand-slide.swiper-slide {
+  @media (min-width: 768px) {
+    margin-bottom: 16px;
+    margin-right: $marginM;
+  }
+  @media (min-width: 1366px) {
+    margin-right: $marginL;
+  }
+}
+
+.brand-slide {
+  border: 1px solid $border;
+  height: 72px;
+  width: 240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    width: 224px;
+    flex-grow: 1;
+  }
+
+  &:nth-child(n+7) {
+    @media (min-width: 768px) {
+      display: none;
+    }
+    @media (min-width: 1372px) {
+      display: flex;
+    }
+  }
+
+  &:nth-child(n+9) {
+    @media (min-width: 1372px) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    position: relative;
+  }
+
+  &__link {
+    cursor: pointer;
+    background-color: inherit;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    &::before {
+    content: url(../img/go.svg);
+    }
+  }
+
+}
+
+.devices-swiper__wrapper.swiper-wrapper {
+  @media (min-width: 768px) {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: $marginM 0 0 $marginM;
+
+    @media (min-width:1366px) {
+      padding: $marginL 0 0 $marginL;
+    }
+  }
+}
+
+.device-slide.swiper-slide {
+  @media (min-width: 768px) {
+    margin-bottom: 16px;
+    margin-right: $marginM;
+  }
+  @media (min-width: 1366px) {
+    margin-right: $marginL;
+  }
+}
+
+.device-slide {
+  border: 1px solid $border;
+  height: 160px;
+  width: 240px;
+  @include text (500, 16px, 24px, $darkText);
+  letter-spacing: -0.2px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  @media (min-width: 768px) {
+    width: 224px;
+    flex-grow: 1;
+  }
+
+  &__link {
+    cursor: pointer;
+    background-color: inherit;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    align-self: flex-end;
+
+    &::before {
+    content: url(../img/go.svg);
+    }
+  }
+
+  &:nth-child(n+4) {
+    @media (min-width: 768px) {
+      display: none;
+    }
+    @media (min-width: 1372px) {
+      display: flex;
+    }
+  }
+
+  &:nth-child(n+5) {
+    @media (min-width: 1372px) {
+      display: none;
+    }
+  }
+}
+
+.button-container {
+  margin-left: $marginM;
+  margin-bottom: $marginL;
+
+  @media(min-width: 1366px) {
+    margin-left: $marginL;
+  }
+}
+.button-more, .button-less {
+  font-family: 'TT Lakes';
+  @include text(500, 16px, 24px, $darkText);
+  padding-left: 10px;
+  border: none;
+  background: inherit;
+  display: none;
+}
+
+.button-more {
+  @media(min-width: 768px) {
+    display: block;
+  }
+  &::before {
+  content: url('../img/expand.svg');
+  display: inline-block;
+  position: relative;
+  left: -5px;
+  top: 6px;
+  }
+}
+
+.button-less::before {
+  content: url('../img/expand.svg');
+  display: inline-block;
+  transform: rotate(180deg);
+  position: relative;
+  left: -5px;
+  top: 3px;
+}
+
+.prices-swiper__wrapper.swiper-wrapper {
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: $marginM;
+  }
+  @media (min-width: 1366px) {
+    padding: $marginL;
+  }
+}
+
+.price-slide {
+  height: 200px;
+  width: 260px;
+  @include text (normal, 14px, 18px, $darkText);
+  letter-spacing: 0.2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    align-items: center;
+
+    &:nth-child(-n+5)::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      background: $border;
+      height: 1px;
+      width: 95%;
+    }
+  }
+
+  button {
+    font-family: $font;
+    @include text(bold, 12px, 24px, $elemBg);
+    text-transform: uppercase;
+    padding: 0 20px;
+    text-align: left;
+    background-color: $accentRose;
+    height: 32px;
+    width: 119px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+
+    @media (min-width: 768px) {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      padding: 0 15px;
+    }
+
+
+    &::after {
+      content: url('../img/goside.svg');
+      position: absolute;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &__service-type {
+
+    @media (min-width: 768px) {
+      width: 60%;
+    }
+
+    &::before {
+      content: 'Ремонтные услуги';
+      display: block;
+      line-height: 16px;
+      color: $greyText;
+      opacity: 0.72;
+      margin-bottom: 4px;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+  &__service-price {
+
+    @media (min-width: 768px) {
+      width: 15%;
+    }
+
+    &::before {
+      content: 'Цена';
+      display: block;
+      line-height: 16px;
+      color: $greyText;
+      opacity: 0.72;
+      margin-bottom: 4px;
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+  &____service-time {
+
+    @media (min-width: 768px) {
+      width: 16%;
+    }
+
+    &::before {
+      content: 'Срок';
+      display: block;
+      line-height: 16px;
+      color: $greyText;
+      opacity: 0.72;
+      margin-bottom: 4px;
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.price-warning {
+  @include text (normal, 14px, 20px, $darkText);
+  margin: 8px $marginS;
+  max-width: 421px;
+
+  @media (min-width: 768px) {
+    margin: 8px $marginM;
+  }
+  @media (min-width: 1366px) {
+    margin: 8px $marginL;
+  }
+}
+
+.commercial-proposal {
+  text-decoration: none;
+  @include text (500, 16px, 24px, $darkText);
+  letter-spacing: -0.2px;
+  margin: 8px $marginS 40px $marginS;
+  display: inline-block;
+  position: relative;
+
+  @media (min-width: 768px) {
+    margin: 8px $marginM 40px $marginM;
+  }
+  @media (min-width: 1366px) {
+    margin: 8px $marginL 40px $marginL;
+  }
+
+  &::after {
+    content: url(../img/more.svg);
+    position: absolute;
+  }
+
+}
+
+.price-slide.swiper-slide.service-header {
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    background: $bgColor;
+    line-height: 16px;
+    color: $greyText;
+    opacity: 0.72;
+    height: 50px;
+
+    &::after {
+      display: none;
+    }
+
+    button {
+      background: inherit;
+      &::after {
+        content: '';
+      }
+    }
+
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: #DDDDDD;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #B5B6BC;
+}

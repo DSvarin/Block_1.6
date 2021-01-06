@@ -1,0 +1,44 @@
+@import 'variables';
+
+html {
+  box-sizing: border-box;
+  font-family: $font;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  max-width: 1440px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  background-color: $bgColor;
+
+  @media (min-width: 1366px) {
+    display: flex;
+  }
+}
+
+
+
+button {
+  outline: none;
+
+  &:hover {
+    transform: scale(1.2)
+  }
+}
+
+@import 'header';
+@import 'sidebar-menu';
+@import 'sidebar-call';
+@import 'sidebar-feedback';
+@import 'generalInfo_header';
+@import 'generalInfo_navigation';
+@import 'generalInfo_text';
+// слайдеры
+@import '../../node_modules/swiper/swiper-bundle.css';
+@import 'serviceInfo';
+@import 'footer';

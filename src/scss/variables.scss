@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'TT Lakes';
+  src: url('../fonts/TTLakes-Regular.eot');
+  src: local('TT Lakes Regular'), local('TTLakes-Regular'),
+      url('../fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/TTLakes-Regular.woff') format('woff'),
+      url('../fonts/TTLakes-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes';
+  src: url('../fonts/TTLakes-Medium.eot');
+  src: local('TT Lakes Medium'), local('TTLakes-Medium'),
+      url('../fonts/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/TTLakes-Medium.woff') format('woff'),
+      url('../fonts/TTLakes-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes';
+  src: url('../fonts/TTLakes-Bold.eot');
+  src: local('TT Lakes Bold'), local('TTLakes-Bold'),
+      url('../fonts/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/TTLakes-Bold.woff') format('woff'),
+      url('../fonts/TTLakes-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+$bgColor: #F8F8F8;
+$elemBg: #FFFFFF;
+$accentGreen: #B8FFEC;
+$accentRose: #FF3E79;
+$greyText: #7E7E82;
+$darkText: #1B1C21;
+$border: #EAEAEA;
+
+$marginS: 16px;
+$marginM: 24px;
+$marginL: 34px;
+
+$font: TT Lakes, sans-serif;
+
+%divider {
+  border-left: 2px solid $border;
+  border-radius: 1px;
+  height: 32px;
+}
+
+%topBorder {
+  border-top: 1px solid #B8FFEC;
+}
+
+@mixin text($weight, $fsize, $lheigth, $color) {
+  font-weight: $weight;
+  font-size: $fsize;
+  line-height: $lheigth;
+  color: $color;
+}
+
+%subtitle {
+  @include text(normal, 16px, 24px, $greyText);
+  @extend %topBorder;
+  text-transform: uppercase;
+  background-image: linear-gradient(90deg, $bgColor 1.39%, $elemBg 100%);
+  padding: 16px;
+}
+
+

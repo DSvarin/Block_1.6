@@ -1,0 +1,102 @@
+.header {
+  background-color: $elemBg;
+  height: 88px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @media (min-width: 1366px) {
+    display: none;
+  }
+
+  button {
+    height: 40px;
+    width: 40px;
+    border: none;
+  }
+
+}
+
+.header__menu-button {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin-left: $marginS;
+
+  @media(min-width: 768px) {
+    margin-left: $marginM;
+  }
+
+  .menu-button {
+    background: $elemBg url('../img/burgermenu.svg');
+    margin-right: $marginS;
+    position: relative;
+
+    @media(min-width: 768px) {
+      margin-right: 40px;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 4px;
+        left: 60px;
+        border-right: 2px solid #EAEAEA;
+        border-radius: 1px;
+        height: 32px;
+      }
+    }
+  }
+}
+
+.header__info-button {
+  display: flex;
+}
+
+.personale-button {
+  display: none;
+  padding-right: 16px;
+
+  @media(min-width: 768px) {
+    display: block;
+  }
+
+  .call-button {
+    background: $elemBg url('../img/call.svg');
+  }
+  .feedback-button {
+    background: $elemBg url('../img/chat.svg');
+    margin-left: $marginS;
+  }
+  .profile-button {
+    background: $elemBg url('../img/profile.svg');
+    margin-left: $marginS;
+  }
+}
+
+.header__service-button {
+  padding-left: 16px;
+  margin-right: $marginS;
+  position: relative;
+
+  @media(min-width: 768px) {
+    margin-right: $marginM;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    border-right: 2px solid #EAEAEA;
+    border-radius: 1px;
+    height: 32px;
+  }
+  .repair-button {
+    background: $elemBg url('../img/repair.svg');
+  }
+  .checkstatus-button {
+    background: $elemBg url('../img/checkstatus.svg');
+    margin-left: $marginS;
+  }
+}
