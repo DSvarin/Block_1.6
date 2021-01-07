@@ -1,62 +1,53 @@
 import '../scss/style.scss';
 
+//Button-modal
 
-/*let bckgrndSidebar = document.querySelector('.sidebar-background');
+let modalButtons = document.querySelectorAll('.modal-open');
+let overlay = document.querySelector('.overlay');
+let closeButtons = document.querySelectorAll('.modal-close');
 
-let closeOpenSidebar = function(openButton, closeButton,
-                              sidebarContainer, sidebar,
-                                transOpenClass, transCloseClass) {
+modalButtons.forEach(function(item){
 
-  openButton.addEventListener('click', function(evt) {
-    evt.preventDefault;
-    sidebar.classList.remove(transCloseClass);
-    sidebar.classList.add(transOpenClass);
-    bckgrndSidebar.style.display = 'block';
-    sidebarContainer.style.zIndex = '100';
+  item.addEventListener('click', function(evt) {
+    evt.preventDefault();
+
+    let modalId = this.getAttribute('data-modal');
+    let modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
+    let modalMenu = document.querySelector('.modal-menu');
+
+    if (modalId === 'call' || modalId === 'feedback' && modalMenu.classList.contains('modal--active')) {
+      modalMenu.classList.remove('modal--active');
+    }
+
+    modalElem.classList.add('modal--active');
+    overlay.classList.add('overlay--active');
   });
 
-  bckgrndSidebar.addEventListener('click', function () {
-    sidebar.classList.add(transCloseClass);
-    sidebar.classList.remove(transOpenClass);
-    bckgrndSidebar.style.display = 'none';
-  })
+});
 
-  closeButton.addEventListener('click', function(evt) {
-    evt.preventDefault;
-    sidebar.classList.add(transCloseClass);
-    sidebar.classList.remove(transOpenClass);
-    bckgrndSidebar.style.display = 'none';
-    sidebarContainer.style.zIndex = '0';
+
+closeButtons.forEach(function(item){
+
+  item.addEventListener('click', function(evt) {
+    evt.preventDefault();
+
+    let parentModal = this.closest('.modal');
+
+    parentModal.classList.remove('modal--active');
+    overlay.classList.remove('overlay--active');
   });
-}
 
-// Menu sidebar
-let openMenuButton = document.querySelector('.menu-button');
-let closeMenuButton = document.querySelector('.menu-close');
-let sidebarMenu = document.querySelector('.sidebar-menu__content');
-let containerMenu = document.querySelector('.sidebar-menu');
+});
 
-closeOpenSidebar(openMenuButton, closeMenuButton, containerMenu, sidebarMenu, 'transform-menu--open' , 'transform-menu--close');
-
-//Feedback sidebar
-let openFeedbackButtonHeader = document.querySelector('.feedback-open');
-let openFeedbackButtonSidebar = document.querySelector('.sidebar-menu').querySelector('.feedback-open');
-let closeFeedbackButton = document.querySelector('.feedback-close');
-let sidebarFeedback = document.querySelector('.sidebar-feedback__content');
-let containerFeedback = document.querySelector('.sidebar-feedback');
-
-closeOpenSidebar(openFeedbackButtonHeader, closeFeedbackButton, containerFeedback, sidebarFeedback, 'transform-feedback--open' , 'transform-feedback--close');
-closeOpenSidebar(openFeedbackButtonSidebar, closeFeedbackButton, containerFeedback, sidebarFeedback, 'transform-feedback--open' , 'transform-feedback--close');
-
-//Call sidebar
-let opencallButtonHeader = document.querySelector('.call-open');
-let opencallButtonSidebar = document.querySelector('.sidebar-menu').querySelector('.call-open');
-let closecallButton = document.querySelector('.call-close');
-let sidebarcall = document.querySelector('.sidebar-call__content');
-let containercall = document.querySelector('.sidebar-call')
-
-closeOpenSidebar(opencallButtonHeader, closecallButton, containercall, sidebarcall, 'transform-call--open' , 'transform-call--close');
-closeOpenSidebar(opencallButtonSidebar, closecallButton, containercall, sidebarcall, 'transform-call--open' , 'transform-call--close');*/
+overlay.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  let openModal = document.querySelectorAll('.modal--active')
+  if(openModal.length > 0){
+  openModal.forEach(function(item){
+    item.classList.remove('modal--active');
+  })};
+  overlay.classList.remove('overlay--active');
+});
 
 //Sliders
 

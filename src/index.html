@@ -5,18 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Ремонтны сервис "CPS"</title>
 </head>
 <body>
   <header class="header">
     <div class="header__menu-button">
-      <button class="menu-button"></button>
+      <button class="menu-button modal-open" data-modal='menu'></button>
       <img src="./img/logo.svg" alt="Логотип компании CPS" class="logo">
     </div>
     <div class="header__info-button">
       <div class="personale-button">
-        <button class="call-button call-open"></button>
-        <button class="feedback-button feedback-open"></button>
+        <button class="call-button modal-open" data-modal='call'></button>
+        <button class="feedback-button modal-open" data-modal='feedback'></button>
         <button class="profile-button"></button>
       </div>
       <div class="header__service-button">
@@ -25,14 +25,14 @@
       </div>
     </div>
   </header>
-  <section class="sidebar-menu">
-    <div class="sidebar-menu__content">
-      <div class="sidebar-menu__header">
-        <button class="menu-close"></button>
+  <div class="modal-menu modal" data-modal="menu">
+    <div class="modal-menu__content">
+      <div class="modal-menu__header">
+        <button class="menu-close modal-close"></button>
         <img src="./img/logo.svg" alt="Логотип компании CPS" class="logo">
         <button class="search"></button>
       </div>
-      <nav class="sidebar-menu__navigation">
+      <nav class="modal-menu__navigation">
         <ul class="site-nav">
           <li class="site-nav__item"><a href="" class="site-nav__link">Ремонт техники</a></li>
           <li class="site-nav__item"><a href="" class="site-nav__link site-nav__link--active">Услуги и сервисы</a></li>
@@ -44,9 +44,9 @@
           <li class="site-nav__item"><a href="" class="site-nav__link">Контакты</a></li>
         </ul>
       </nav>
-      <div class="sidebar-menu__footer">
-        <button class="call call-open"></button>
-        <button class="feedback feedback-open"></button>
+      <div class="modal-menu__footer">
+        <button class="call modal-open" data-modal="call"></button>
+        <button class="feedback modal-open" data-modal="feedback"></button>
         <button class="profile"></button>
         <a href="mailto:mail@cps.com" class="email">mail@cps.com</a>
         <a href="tel:+78008908900" class="tel">8 800 890 8900</a>
@@ -57,40 +57,9 @@
         </div>
       </div>
     </div>
-  </section>
-  <section class="sidebar-call">
-    <div class="sidebar-call__content">
-      <button class="call-close"></button>
-      <h3 class="sidebar-call__header">Заказать звонок</h3>
-      <form action="#" name="call">
-        <input type="tel" name="usertel" value="" placeholder="Телефон">
-        <p class="text-submit">
-          Нажимая “отправить”, вы даете согласие на <a href="">обработку персональных данных</a> и соглашаетесь с нашей <a href="">политикой конфиденциальности</a>
-        </p>
-        <button type="submit">Отправить</button>
-      </form>
-    </div>
-  </section>
-  <section class="sidebar-feedback">
-    <div class="sidebar-feedback__content">
-      <button class="feedback-close"></button>
-      <h3 class="sidebar-feedback__header">Обратная связь</h3>
-      <form action="#" name="feedback">
-        <input type="text" name="sendername" value="" placeholder="Имя">
-        <input type="tel" name="sendertel" value="" placeholder="Телефон">
-        <input type="email" name="senderemail" value="" placeholder="Электронная почта">
-        <textarea rows="5" name="sendermessage" value="" placeholder="Сообщение"></textarea>
-        <p class="text-submit">
-          Нажимая “отправить”, вы даете согласие на <a href="">обработку персональных данных</a> и соглашаетесь с нашей <a href="">политикой конфиденциальности</a>
-        </p>
-        <button type="submit">Отправить</button>
-      </form>
-    </div>
-  </section>
-  <div class="sidebar-background"></div>
+  </div>
   <div class="wrapper">
     <main>
-
       <section class="generalInfo">
         <div class="generalInfo__header">
           <h1>Услуги и сервисы</h1>
@@ -122,7 +91,6 @@
           <img src="./img/nameplate.jpg" alt="Табличка с логотипом компании" class="image-nameplate">
         </div>
       </section>
-
       <section class="serviceInfo">
         <div class="serviceInfo__brands">
           <h2 class="serviceInfo__title">Ремонт техники различных брендов</h2>
@@ -280,5 +248,35 @@
       </div>
     </footer>
   </div>
+  <div class="modal-call modal" data-modal="call">
+    <div class="modal-call__content">
+      <button class="call-close modal-close"></button>
+      <h3 class="modal-call__header">Заказать звонок</h3>
+      <form action="#" name="call">
+        <input type="tel" name="usertel" value="" placeholder="Телефон">
+        <p class="text-submit">
+          Нажимая “отправить”, вы даете согласие на <a href="">обработку персональных данных</a> и соглашаетесь с нашей <a href="">политикой конфиденциальности</a>
+        </p>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal-feedback modal" data-modal="feedback">
+    <div class="modal-feedback__content">
+      <button class="feedback-close modal-close"></button>
+      <h3 class="modal-feedback__header">Обратная связь</h3>
+      <form action="#" name="feedback">
+        <input type="text" name="sendername" value="" placeholder="Имя">
+        <input type="tel" name="sendertel" value="" placeholder="Телефон">
+        <input type="email" name="senderemail" value="" placeholder="Электронная почта">
+        <textarea rows="5" name="sendermessage" value="" placeholder="Сообщение"></textarea>
+        <p class="text-submit">
+          Нажимая “отправить”, вы даете согласие на <a href="">обработку персональных данных</a> и соглашаетесь с нашей <a href="">политикой конфиденциальности</a>
+        </p>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+  <div class="overlay"></div>
 </body>
 </html>
