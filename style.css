@@ -1128,7 +1128,8 @@ h1 {
 .image-nameplate {
   align-self: center;
   width: 100%;
-  max-width: 530px; }
+  max-width: 530px;
+  margin-bottom: 35px; }
   @media (min-width: 768px) {
     .image-nameplate {
       margin-right: 24px;
