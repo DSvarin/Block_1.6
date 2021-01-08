@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ремонтны сервис "CPS"</title>
 <link href="style.css" rel="stylesheet"></head>
@@ -24,62 +24,29 @@
       </div>
     </div>
   </header>
-  <div class="modal-menu modal" data-modal="menu">
-    <div class="modal-menu__content">
-      <div class="modal-menu__header">
-        <button class="menu-close modal-close"></button>
-        <img src="./img/logo.svg" alt="Логотип компании CPS" class="logo">
-        <button class="search"></button>
-      </div>
-      <nav class="modal-menu__navigation">
-        <ul class="site-nav">
-          <li class="site-nav__item"><a href="" class="site-nav__link">Ремонт техники</a></li>
-          <li class="site-nav__item"><a href="" class="site-nav__link site-nav__link--active">Услуги и сервисы</a></li>
-          <li class="site-nav__item"><a href="" class="site-nav__link">Корпоративным клиентам</a></li>
-          <li class="site-nav__item"><a href="" class="site-nav__link">Продавцам техники</a></li>
-          <li class="site-nav__item"><a href="" class="site-nav__link">Партнерам</a></li>
-          <li class="site-nav__item"><a href="" class="site-nav__link">Производителям</a></li>
-          <li class="site-nav__item"><a href="" class="site-nav__link">Наши сервисные центры</a></li>
-          <li class="site-nav__item"><a href="" class="site-nav__link">Контакты</a></li>
-        </ul>
-      </nav>
-      <div class="modal-menu__footer">
-        <button class="call modal-open" data-modal="call"></button>
-        <button class="feedback modal-open" data-modal="feedback"></button>
-        <button class="profile"></button>
-        <a href="mailto:mail@cps.com" class="email">mail@cps.com</a>
-        <a href="tel:+78008908900" class="tel">8 800 890 8900</a>
-        <div class="lang">
-          <a href="" class="lang--active">RU</a>
-          <a href="">EN</a>
-          <a href="">CH</a>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="wrapper">
     <main>
-      <section class="generalInfo">
-        <div class="generalInfo__header">
+      <section class="general-information">
+        <div class="general-information__header">
           <h1>Услуги и сервисы</h1>
-          <div class="generalIngo__button">
+          <div class="general-information__button">
             <button class="repair-button">Оставить заявку</button>
             <button class="checkstatus-button">Статус ремонта</button>
           </div>
         </div>
-        <nav class="generalInfo__navigation">
-          <ul class="nav">
-            <li class="nav__item"><a href="" class="nav__link nav__link--active">Ремонтируемые устройства</a></li>
-            <li class="nav__item"><a href="" class="nav__link">Дополнительные услуги</a></li>
-            <li class="nav__item"><a href="" class="nav__link">Цены на услуги</a></li>
-            <li class="nav__item"><a href="" class="nav__link">Адреса сервисных центров</a></li>
-            <li class="nav__item"><a href="" class="nav__link">Специальные цены</a></li>
-            <li class="nav__item"><a href="" class="nav__link">Отзывы</a></li>
+        <nav class="general-information__navigation">
+          <ul class="navigation">
+            <li class="navigation__item"><a href="" class="navigation__link navigation__link--active">Ремонтируемые устройства</a></li>
+            <li class="navigation__item"><a href="" class="navigation__link">Дополнительные услуги</a></li>
+            <li class="navigation__item"><a href="" class="navigation__link">Цены на услуги</a></li>
+            <li class="navigation__item"><a href="" class="navigation__link">Адреса сервисных центров</a></li>
+            <li class="navigation__item"><a href="" class="navigation__link">Специальные цены</a></li>
+            <li class="navigation__item"><a href="" class="navigation__link">Отзывы</a></li>
           </ul>
         </nav>
-        <div class="generalInfo__text">
+        <div class="general-information__text">
           <div class="text">
-            <p class="text__info">Мы являемся авторизованным сервисным центром по ремонту техники Dell.
+            <p class="text__information">Мы являемся авторизованным сервисным центром по ремонту техники Dell.
               Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
               <br><br>
               Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
@@ -90,9 +57,9 @@
           <img src="./img/nameplate.jpg" alt="Табличка с логотипом компании" class="image-nameplate">
         </div>
       </section>
-      <section class="serviceInfo">
-        <div class="serviceInfo__brands">
-          <h2 class="serviceInfo__title">Ремонт техники различных брендов</h2>
+      <section class="service-information">
+        <div class="service-information__brands">
+          <h2 class="service-information__title">Ремонт техники различных брендов</h2>
           <div class="brands-swiper swiper-container">
             <div class="gradient"></div>
             <ul class="brands-swiper__wrapper swiper-wrapper">
@@ -148,8 +115,8 @@
             <button class="brands-button__less button-less">Скрыть</button>
         </div>
         </div>
-        <div class="serviceInfo__devices">
-          <h2 class="serviceInfo__title">Ремонт различных видов техники</h2>
+        <div class="service-information__devices">
+          <h2 class="service-information__title">Ремонт различных видов техники</h2>
           <div class="devices-swiper swiper-container">
             <div class="gradient"></div>
             <ul class="devices-swiper__wrapper swiper-wrapper">
@@ -185,8 +152,8 @@
             <button class="devices-button__less button-less">Скрыть</button>
         </div>
         </div>
-        <div class="serviceInfo__prices">
-          <h2 class="serviceInfo__title">Цены на услуги</h2>
+        <div class="service-information__prices">
+          <h2 class="service-information__title">Цены на услуги</h2>
           <div class="prices-swiper swiper-container">
             <div class="gradient"></div>
             <ul class="prices-swiper__wrapper swiper-wrapper">
@@ -239,13 +206,44 @@
       <div class="footer__developer">
         © 2019 CPS <br> Разработано командой Apesong
       </div>
-      <div class="footer__priv-policy">
-        Политика конфиденциальности
-      </div>
+      <div>Политика конфиденциальности</div>
       <div class="footer__warning">
         Информация, размещенная на данной странице, не является публичной офертой
       </div>
     </footer>
+  </div>
+  <div class="modal-menu modal" data-modal="menu">
+    <div class="modal-menu__content">
+      <div class="modal-menu__header">
+        <button class="menu-close modal-close"></button>
+        <img src="./img/logo.svg" alt="Логотип компании CPS" class="logo">
+        <button class="search"></button>
+      </div>
+      <nav class="modal-menu__navigation">
+        <ul class="site-navigation">
+          <li class="site-navigation__item"><a href="" class="site-navigation__link">Ремонт техники</a></li>
+          <li class="site-navigation__item"><a href="" class="site-navigation__link site-navigation__link--active">Услуги и сервисы</a></li>
+          <li class="site-navigation__item"><a href="" class="site-navigation__link">Корпоративным клиентам</a></li>
+          <li class="site-navigation__item"><a href="" class="site-navigation__link">Продавцам техники</a></li>
+          <li class="site-navigation__item"><a href="" class="site-navigation__link">Партнерам</a></li>
+          <li class="site-navigation__item"><a href="" class="site-navigation__link">Производителям</a></li>
+          <li class="site-navigation__item"><a href="" class="site-navigation__link">Наши сервисные центры</a></li>
+          <li class="site-navigation__item"><a href="" class="site-navigation__link">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="modal-menu__footer">
+        <button class="call modal-open" data-modal="call"></button>
+        <button class="feedback modal-open" data-modal="feedback"></button>
+        <button class="profile"></button>
+        <a href="mailto:mail@cps.com" class="email">mail@cps.com</a>
+        <a href="tel:+78008908900" class="tel">8 800 890 8900</a>
+        <div class="lang">
+          <a href="" class="lang_active">RU</a>
+          <a href="">EN</a>
+          <a href="">CH</a>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="modal-call modal" data-modal="call">
     <div class="modal-call__content">
@@ -268,7 +266,7 @@
         <input type="text" name="sendername" value="" placeholder="Имя">
         <input type="tel" name="sendertel" value="" placeholder="Телефон">
         <input type="email" name="senderemail" value="" placeholder="Электронная почта">
-        <textarea rows="5" name="sendermessage" value="" placeholder="Сообщение"></textarea>
+        <textarea rows="5" name="sendermessage" placeholder="Сообщение"></textarea>
         <p class="text-submit">
           Нажимая “отправить”, вы даете согласие на <a href="">обработку персональных данных</a> и соглашаетесь с нашей <a href="">политикой конфиденциальности</a>
         </p>
