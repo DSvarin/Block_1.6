@@ -18,6 +18,7 @@ body {
 
   @media (min-width: 1366px) {
     display: flex;
+    flex-direction: row-reverse;
   }
 }
 
@@ -27,7 +28,8 @@ button {
   outline: none;
 
   &:hover {
-    transform: scale(1.2)
+    transform: scale(1.03);
+    opacity: 0.85;
   }
 }
 
@@ -35,10 +37,7 @@ button {
 @import 'modal-menu';
 @import 'modal-call';
 @import 'modal-feedback';
-@import 'generalInfo_header';
-@import 'generalInfo_navigation';
-@import 'generalInfo_text';
-// слайдеры
+@import 'general-information';
 @import '../../node_modules/swiper/swiper-bundle.css';
-@import 'serviceInfo';
+@import 'service-information';
 @import 'footer';

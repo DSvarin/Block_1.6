@@ -1,6 +1,8 @@
 .modal-feedback {
   opacity: 0;
   visibility: hidden;
+  transform: translate(100%, 0);
+  transition: all 0.3s;
 
   position: fixed;
   top: 0;
@@ -9,21 +11,20 @@
   box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
                16px 0px 52px rgba(14, 24, 80, 0.2);
 
-  @media (min-width: 1366px) {
-    background-color: $elemBg;
-    align-self: stretch;
-  }
-
   &__content {
     background: $elemBg;
-    padding: 12px;
+    padding: $marginS;
     background-color: $elemBg;
     width: 100vw;
     height: 100vh;
 
+    @media (min-width: 360px) {
+      padding: $marginM;
+    }
+
     @media (min-width: 768px) {
       width: 440px;
-      padding: 32px;
+      padding: $marginL;
     }
   }
 }
@@ -31,33 +32,8 @@
 .modal--active {
   opacity: 1;
   visibility: visible;
+  transform: translate(0, 0);
 }
-
-// .transform-feedback--open {
-//   transform:  translate(-100%);
-//   transition: 0.5s;
-//   box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
-//               16px 0px 52px rgba(14, 24, 80, 0.2);
-//   @media (min-width: 768px) {
-//     transform:  translate(-135%);
-//   }
-//   @media (min-width: 1366px) {
-//     transform:  translate(-162%);
-//   }
-// }
-
-// .transform-feedback--close {
-//   transform: translate(100%);
-//   transition:  0.5s;
-//   box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
-//               16px 0px 52px rgba(14, 24, 80, 0.2);
-//   @media (min-width: 768px) {
-//     transform:  translate(135%);
-//   }
-//   @media (min-width: 1366px) {
-//     transform:  translate(162%);
-//   }
-// }
 
 .modal-feedback__header {
   @include text(bold, 24px, 32px, $darkText);
@@ -66,11 +42,14 @@
   &::before {
     content: url('../img/highlight.png');
     position: absolute;
-    left: -12px;
+    left: -$marginS;
     top: -5px;
 
+    @media (min-width: 360px) {
+      left: -$marginM;
+    }
     @media (min-width: 768px) {
-      left: -32px;
+      left: -$marginL;
     }
   }
 }

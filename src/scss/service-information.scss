@@ -1,4 +1,4 @@
-.serviceInfo {
+.service-information {
 
   ul, li {
   list-style: none;
@@ -21,9 +21,10 @@
 
 .gradient {
   position: absolute;
+  right: 0;
   height: 100%;
-  width: 100%;
-  background-image: linear-gradient(90deg, transparent 90%, #F2F2F2 100%);
+  width: 10%;
+  background-image: linear-gradient(90deg, transparent , $bgColor );
   z-index: 2;
 
   @media (min-width: 768px) {
@@ -83,18 +84,24 @@ li.swiper-slide {
     width: 224px;
     flex-grow: 1;
   }
+  @media (min-width: 1263px) {
+    width: 250px;
+  }
+  @media (min-width: 1366px) {
+    width: 223px;
+  }
 
   &:nth-child(n+7) {
     @media (min-width: 768px) {
       display: none;
     }
-    @media (min-width: 1372px) {
+    @media (min-width: 1120px) {
       display: flex;
     }
   }
 
   &:nth-child(n+9) {
-    @media (min-width: 1372px) {
+    @media (min-width: 1120px) {
       display: none;
     }
   }
@@ -112,6 +119,11 @@ li.swiper-slide {
 
     &::before {
     content: url(../img/go.svg);
+    }
+
+    &:hover {
+      transform: scale(1.03);
+      opacity: 0.85;
     }
   }
 
@@ -167,19 +179,24 @@ li.swiper-slide {
     &::before {
     content: url(../img/go.svg);
     }
+
+    &:hover {
+      transform: scale(1.03);
+      opacity: 0.85;
+    }
   }
 
   &:nth-child(n+4) {
     @media (min-width: 768px) {
       display: none;
     }
-    @media (min-width: 1372px) {
+    @media (min-width: 1120px) {
       display: flex;
     }
   }
 
   &:nth-child(n+5) {
-    @media (min-width: 1372px) {
+    @media (min-width: 1120px) {
       display: none;
     }
   }
@@ -284,7 +301,6 @@ li.swiper-slide {
       right: 0;
       padding: 0 15px;
     }
-
 
     &::after {
       content: url('../img/goside.svg');

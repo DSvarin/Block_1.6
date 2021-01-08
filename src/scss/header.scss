@@ -22,29 +22,31 @@
   display: flex;
   align-items: center;
   margin-left: $marginS;
+  position: relative;
 
   @media(min-width: 768px) {
     margin-left: $marginM;
   }
 
+  &:after {
+    content: '';
+
+    @media(min-width: 768px) {
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 60px;
+      border-right: 2px solid $border;
+      border-radius: 1px;
+      height: 32px;
+    }
+  }
   .menu-button {
     background: $elemBg url('../img/burgermenu.svg');
     margin-right: $marginS;
-    position: relative;
 
     @media(min-width: 768px) {
       margin-right: 40px;
-
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 4px;
-        left: 60px;
-        border-right: 2px solid #EAEAEA;
-        border-radius: 1px;
-        height: 32px;
-      }
     }
   }
 }
@@ -88,7 +90,7 @@
     position: absolute;
     top: 4px;
     left: 0;
-    border-right: 2px solid #EAEAEA;
+    border-right: 2px solid $border;
     border-radius: 1px;
     height: 32px;
   }

@@ -1,6 +1,8 @@
 .modal-menu {
   opacity: 0;
   visibility: hidden;
+  transform: translate(-100%, 0);
+  transition: all 0.3s;
 
   background-color: $elemBg;
   position: fixed;
@@ -12,6 +14,7 @@
   @media (min-width: 1366px) {
     opacity: 1;
     visibility: visible;
+    transform: translate(0, 0);
     box-shadow: none;
     position: static;
     align-self: stretch;
@@ -61,21 +64,8 @@
 .modal--active {
   opacity: 1;
   visibility: visible;
+  transform: translate(0, 0);
 }
-
-
-
-// .transform-menu--open {
-//   transform: translate(100%);
-//   transition: 0.5s;
-//   box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
-// }
-
-// .transform-menu--close {
-//   transform: translate(-100%);
-//   transition: 0.5s;
-//   box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
-// }
 
 .modal-menu__header {
   display: flex;
@@ -108,7 +98,7 @@
 .modal-menu__navigation {
   margin-bottom: auto;
 
-  .site-nav {
+  .site-navigation {
     list-style-type: none;
     padding: 0;
 
@@ -173,8 +163,9 @@
   }
   .lang {
     @include text(500, 16px, 24px, $darkText);
-  }
-  .lang--active {
+
+    &_active {
     color: $greyText;
+    }
   }
 }

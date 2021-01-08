@@ -5,6 +5,7 @@ import '../scss/style.scss';
 let modalButtons = document.querySelectorAll('.modal-open');
 let overlay = document.querySelector('.overlay');
 let closeButtons = document.querySelectorAll('.modal-close');
+let body = document.querySelector('body');
 
 modalButtons.forEach(function(item){
 
@@ -14,6 +15,8 @@ modalButtons.forEach(function(item){
     let modalId = this.getAttribute('data-modal');
     let modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
     let modalMenu = document.querySelector('.modal-menu');
+
+    body.style.overflowY = 'hidden';
 
     if (modalId === 'call' || modalId === 'feedback' && modalMenu.classList.contains('modal--active')) {
       modalMenu.classList.remove('modal--active');
@@ -31,6 +34,8 @@ closeButtons.forEach(function(item){
   item.addEventListener('click', function(evt) {
     evt.preventDefault();
 
+    body.style.overflowY = 'visible';
+
     let parentModal = this.closest('.modal');
 
     parentModal.classList.remove('modal--active');
@@ -42,6 +47,8 @@ closeButtons.forEach(function(item){
 overlay.addEventListener('click', function(evt) {
   evt.preventDefault();
   let openModal = document.querySelectorAll('.modal--active')
+
+  body.style.overflowY = 'visible';
   if(openModal.length > 0){
   openModal.forEach(function(item){
     item.classList.remove('modal--active');
@@ -96,11 +103,11 @@ let showMoreLess = function(slideClass, moreBtnClass, lessBtnClass, numbVisibleS
   more.addEventListener('click', function(evt) {
     evt.preventDefault();
 
-    if (window.innerWidth >= 768 && window.innerWidth < 1372) {
+    if (window.innerWidth >= 768 && window.innerWidth < 1120) {
       for (let i = numbVisibleSlidesM; i < slides.length; i++) {
           slides[i].style.display = 'flex';
       }
-    } else if (window.innerWidth >= 1372) {
+    } else if (window.innerWidth >= 1120) {
       for (let i = numbVisibleSlidesL; i < slides.length; i++) {
           slides[i].style.display = 'flex';
       }
@@ -112,11 +119,11 @@ let showMoreLess = function(slideClass, moreBtnClass, lessBtnClass, numbVisibleS
   less.addEventListener('click', function(evt) {
     evt.preventDefault();
 
-    if (window.innerWidth >= 768 && window.innerWidth < 1372) {
+    if (window.innerWidth >= 768 && window.innerWidth < 1120) {
       for (let i = numbVisibleSlidesM; i < slides.length; i++) {
           slides[i].style.display = 'none';
       }
-    } else if (window.innerWidth >= 1372) {
+    } else if (window.innerWidth >= 1120) {
       for (let i = numbVisibleSlidesL; i < slides.length; i++) {
           slides[i].style.display = 'none';
       }
