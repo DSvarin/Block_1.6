@@ -17,7 +17,7 @@
 
 }
 
-.header__menu-button {
+.header__menu-logo {
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -41,17 +41,18 @@
       height: 32px;
     }
   }
-  .menu-button {
-    background: $elemBg url('../img/burgermenu.svg');
-    margin-right: $marginS;
+}
 
-    @media(min-width: 768px) {
-      margin-right: 40px;
-    }
+.header__menu-button {
+  background: $elemBg url('../img/burgermenu.svg');
+  margin-right: $marginS;
+
+  @media(min-width: 768px) {
+    margin-right: 40px;
   }
 }
 
-.header__info-button {
+.header__information-button {
   display: flex;
 }
 
@@ -63,20 +64,20 @@
     display: block;
   }
 
-  .call-button {
+  &__call {
     background: $elemBg url('../img/call.svg');
   }
-  .feedback-button {
+  &__feedback {
     background: $elemBg url('../img/chat.svg');
     margin-left: $marginS;
   }
-  .profile-button {
+  &__profile {
     background: $elemBg url('../img/profile.svg');
     margin-left: $marginS;
   }
 }
 
-.header__service-button {
+.service-button {
   padding-left: 16px;
   margin-right: $marginS;
   position: relative;
@@ -84,6 +85,7 @@
   @media(min-width: 768px) {
     margin-right: $marginM;
   }
+
   &:after {
     content: '';
     display: block;
@@ -94,10 +96,10 @@
     border-radius: 1px;
     height: 32px;
   }
-  .repair-button {
+  &__repair {
     background: $elemBg url('../img/repair.svg');
   }
-  .checkstatus-button {
+  &__checkstatus{
     background: $elemBg url('../img/checkstatus.svg');
     margin-left: $marginS;
   }

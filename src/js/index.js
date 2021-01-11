@@ -25,9 +25,7 @@ modalButtons.forEach(function(item){
     modalElem.classList.add('modal--active');
     overlay.classList.add('overlay--active');
   });
-
 });
-
 
 closeButtons.forEach(function(item){
 
@@ -41,7 +39,6 @@ closeButtons.forEach(function(item){
     parentModal.classList.remove('modal--active');
     overlay.classList.remove('overlay--active');
   });
-
 });
 
 overlay.addEventListener('click', function(evt) {
