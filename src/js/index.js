@@ -8,12 +8,17 @@ let closeButtons = document.querySelectorAll('.modal-close');
 let body = document.querySelector('body');
 let modals = document.querySelectorAll('.modal');
 let modalMenu = document.querySelector('.modal-menu');
+let modalCall = document.querySelector('.modal-call');
+let modalFeedback = document.querySelector('.modal-feedback');
 
-modals.forEach(function(item){
-  item.style.display = 'none';
-});
 if (window.innerWidth >= 1366) {
-  modalMenu.style.display = 'block'
+  modalMenu.style.display = 'block';
+  modalCall.style.display = 'none';
+  modalFeedback.style.display = 'none';
+} else {
+  modals.forEach(function(item){
+    item.style.display = 'none';
+  })
 };
 
 modalButtons.forEach(function(item){
@@ -28,7 +33,7 @@ modalButtons.forEach(function(item){
 
     if (modalId === 'feedback' && modalMenu.classList.contains('modal--active') ||
         modalId === 'call' && modalMenu.classList.contains('modal--active')) {
-          
+
       modalMenu.classList.remove('modal--active');
       setTimeout(function(){modalMenu.style.display = 'none'}, 350);
     }
