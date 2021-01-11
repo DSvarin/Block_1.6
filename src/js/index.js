@@ -6,6 +6,11 @@ let modalButtons = document.querySelectorAll('.modal-open');
 let overlay = document.querySelector('.overlay');
 let closeButtons = document.querySelectorAll('.modal-close');
 let body = document.querySelector('body');
+let modals = document.querySelectorAll('.modal');
+
+modals.forEach(function(item){
+  item.style.display = 'none';
+} )
 
 modalButtons.forEach(function(item){
 
@@ -20,9 +25,11 @@ modalButtons.forEach(function(item){
 
     if (modalId === 'call' || modalId === 'feedback' && modalMenu.classList.contains('modal--active')) {
       modalMenu.classList.remove('modal--active');
+      setTimeout(function(){modalMenu.style.display = 'none'}, 350);
     }
+    modalElem.style.display = 'block';
+    setTimeout(function(){modalElem.classList.add('modal--active')}, 100);
 
-    modalElem.classList.add('modal--active');
     overlay.classList.add('overlay--active');
   });
 });
@@ -37,6 +44,8 @@ closeButtons.forEach(function(item){
     let parentModal = this.closest('.modal');
 
     parentModal.classList.remove('modal--active');
+    setTimeout(function(){parentModal.style.display = 'none'}, 350);
+
     overlay.classList.remove('overlay--active');
   });
 });
@@ -49,6 +58,8 @@ overlay.addEventListener('click', function(evt) {
   if(openModal.length > 0){
   openModal.forEach(function(item){
     item.classList.remove('modal--active');
+
+    setTimeout(function(){item.style.display = 'none'}, 350);
   })};
   overlay.classList.remove('overlay--active');
 });
