@@ -603,19 +603,19 @@ button {
     width: 40px;
     border: none; }
 
-.header__menu-button {
+.header__menu-logo {
   flex-grow: 1;
   display: flex;
   align-items: center;
   margin-left: 16px;
   position: relative; }
   @media (min-width: 768px) {
-    .header__menu-button {
+    .header__menu-logo {
       margin-left: 24px; } }
-  .header__menu-button:after {
+  .header__menu-logo:after {
     content: ''; }
     @media (min-width: 768px) {
-      .header__menu-button:after {
+      .header__menu-logo:after {
         display: block;
         position: absolute;
         top: 10px;
@@ -623,14 +623,15 @@ button {
         border-right: 2px solid #EAEAEA;
         border-radius: 1px;
         height: 32px; } }
-  .header__menu-button .menu-button {
-    background: #FFFFFF url(./static/burgermenu.svg);
-    margin-right: 16px; }
-    @media (min-width: 768px) {
-      .header__menu-button .menu-button {
-        margin-right: 40px; } }
 
-.header__info-button {
+.header__menu-button {
+  background: #FFFFFF url(./static/burgermenu.svg);
+  margin-right: 16px; }
+  @media (min-width: 768px) {
+    .header__menu-button {
+      margin-right: 40px; } }
+
+.header__information-button {
   display: flex; }
 
 .personale-button {
@@ -639,23 +640,23 @@ button {
   @media (min-width: 768px) {
     .personale-button {
       display: block; } }
-  .personale-button .call-button {
+  .personale-button__call {
     background: #FFFFFF url(./static/call.svg); }
-  .personale-button .feedback-button {
+  .personale-button__feedback {
     background: #FFFFFF url(./static/chat.svg);
     margin-left: 16px; }
-  .personale-button .profile-button {
+  .personale-button__profile {
     background: #FFFFFF url(./static/profile.svg);
     margin-left: 16px; }
 
-.header__service-button {
+.service-button {
   padding-left: 16px;
   margin-right: 16px;
   position: relative; }
   @media (min-width: 768px) {
-    .header__service-button {
+    .service-button {
       margin-right: 24px; } }
-  .header__service-button:after {
+  .service-button:after {
     content: '';
     display: block;
     position: absolute;
@@ -664,9 +665,9 @@ button {
     border-right: 2px solid #EAEAEA;
     border-radius: 1px;
     height: 32px; }
-  .header__service-button .repair-button {
+  .service-button__repair {
     background: #FFFFFF url(./static/repair.svg); }
-  .header__service-button .checkstatus-button {
+  .service-button__checkstatus {
     background: #FFFFFF url(./static/checkstatus.svg);
     margin-left: 16px; }
 
@@ -1026,16 +1027,16 @@ h1 {
     background: inherit;
     display: flex;
     align-items: center; }
-  .general-information__button .repair-button {
-    margin-right: 30px; }
-    .general-information__button .repair-button::after {
-      content: url(./static/repair.svg);
+    .general-information__button button:first-child {
+      margin-right: 30px; }
+      .general-information__button button:first-child::after {
+        content: url(./static/repair.svg);
+        height: 40px;
+        margin-left: 8px; }
+    .general-information__button button:last-child::after {
+      content: url(./static/checkstatus.svg);
       height: 40px;
       margin-left: 8px; }
-  .general-information__button .checkstatus-button::after {
-    content: url(./static/checkstatus.svg);
-    height: 40px;
-    margin-left: 8px; }
 
 .general-information__navigation {
   position: relative;
