@@ -7,10 +7,14 @@ let overlay = document.querySelector('.overlay');
 let closeButtons = document.querySelectorAll('.modal-close');
 let body = document.querySelector('body');
 let modals = document.querySelectorAll('.modal');
+let modalMenu = document.querySelector('.modal-menu');
 
 modals.forEach(function(item){
   item.style.display = 'none';
-} )
+});
+if (window.innerWidth >= 1366) {
+  modalMenu.style.display = 'block'
+};
 
 modalButtons.forEach(function(item){
 
@@ -19,11 +23,12 @@ modalButtons.forEach(function(item){
 
     let modalId = this.getAttribute('data-modal');
     let modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
-    let modalMenu = document.querySelector('.modal-menu');
 
     body.style.overflowY = 'hidden';
 
-    if (modalId === 'call' || modalId === 'feedback' && modalMenu.classList.contains('modal--active')) {
+    if (modalId === 'feedback' && modalMenu.classList.contains('modal--active') ||
+        modalId === 'call' && modalMenu.classList.contains('modal--active')) {
+          
       modalMenu.classList.remove('modal--active');
       setTimeout(function(){modalMenu.style.display = 'none'}, 350);
     }
